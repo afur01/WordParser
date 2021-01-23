@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordParser", "WordParser\WordParser.csproj", "{0FA1FA50-B39C-4CAB-B5FC-299995B131CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FA1FA50-B39C-4CAB-B5FC-299995B131CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA1FA50-B39C-4CAB-B5FC-299995B131CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA1FA50-B39C-4CAB-B5FC-299995B131CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA1FA50-B39C-4CAB-B5FC-299995B131CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B48B4E9-0FD3-495D-86B8-AE91DA1E3F88}
+	EndGlobalSection
+EndGlobal

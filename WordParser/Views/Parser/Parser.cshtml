@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewData["Title"] = "WordParser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .color-red {
+        color: red !important;
+    }
+</style>
+
+<h1>WordParser</h1>
+<p class="color-red">@ViewBag.Message</p>
+<form method="post" enctype="multipart/form-data" asp-controller="Parser" asp-action="Parser">
+    <div class="btn-group">
+
+        <input type="file" required name="File" value="ddd" class="btn btn-primary" />
+        <div class="btn-group">
+            <select name="DocumentType" required class="btn btn-primary dropdown-toggle">
+                <option value="" class="dropdown-item">Seçiniz</option>
+                <option value="Word" class="dropdown-item">Word</option>
+                <option value="Pdf" class="dropdown-item">Pdf</option>
+            </select>
+        </div>
+    </div>
+    <br />
+    <br />
+    <input type="submit" name="name" value="Yükle" />
+</form>
+
+<br />
+<ul class="list-group">
+  
+    @*<li class="list-group-item">hata 2 : @ViewData["hata1"]</li>*@
+    
+  
+</ul>
+
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<style>
+    table, tr, td, th {
+        background-color: white;
+    }
+
+    th {
+        background-color: aquamarine;
+    }
+
+    td {
+        background-color: aliceblue;
+    }
+</style>
+<body>
+
+
+    <table style="width:100%">
+        <tr>
+            <th>HATA KODU</th>
+            <th>HATA</th>
+            <th>SATIR</th>
+        </tr>
+        <tr>
+            <td>HATA 1</td>
+            <td>@ViewData["hata1"]</td>
+            <td>@ViewData["a"]</td>
+        </tr>
+        <tr>
+            <td>HATA 2</td>
+            <td>@ViewData["hata5"]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>HATA 3</td>
+            <td>@ViewData["hata2"]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>HATA 4</td>
+            <td>@ViewData["hata3"]</td>
+            <td>@ViewData["line3"]</td>
+        </tr>
+        <tr>
+            <td>HATA 5</td>
+            <td>@ViewData["hata4"]</td>
+            <td>@ViewData["line4"]</td>
+        </tr>
+        <tr>
+            <td>HATA 6</td>
+            <td>@ViewData["hata6"]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>HATA 7</td>
+            <td>@ViewData["hata7"]</td>
+            <td>@ViewData["line7"]</td>
+        </tr>
+        <tr>
+            <td>HATA 8</td>
+            <td>@ViewData["hata8"]</td>
+            <td>@ViewData["line8"]</td>
+        </tr>
+        <tr>
+            <td>HATA 9</td>
+            <td>@ViewData["hata9"]</td>
+            <td>@ViewData["line9"]</td>
+        </tr>
+        <tr>
+            <td>HATA 10</td>
+            <td>@ViewData["hata10"]</td>
+            <td>@ViewData["line10"]</td>
+        </tr>
+        <tr>
+            <td>HATA 11</td>
+            <td>@ViewData["hata11"]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>HATA 12</td>
+            <td>@ViewData["hata12"]</td>
+            <td>@ViewData["line12"] - @ViewData["number1"]</td>
+        </tr>
+        <tr>
+            <td>HATA 13</td>
+            <td>@ViewData["hata13"]</td>
+            <td>@ViewData["line13"]</td>
+        </tr>
+        <tr>
+            <td>HATA 13</td>
+            <td>@ViewData["hata14"]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>HATA 15</td>
+            <td>@ViewData["hata15"]</td>
+            <td>@ViewData["line15"]</td>
+        </tr>
+        <tr>
+            <td>HATA 16</td>
+            <td>@ViewData["hata16"]</td>
+            <td>@ViewData["line16"]</td>
+        </tr>
+        <tr>
+            <td>HATA 17</td>
+            <td>@ViewData["hata17"]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>HATA 18</td>
+            <td>@ViewData["hata18"]</td>
+            <td>@ViewData["line18"]</td>
+        </tr>
+        <tr>
+            <td>HATA 19</td>
+            <td>@ViewData["hata19"]</td>
+            <td>@ViewData["line19"]</td>
+        </tr>
+        <tr>
+            <td>HATA 20</td>
+            <td>@ViewData["hata20"]</td>
+            <td>@ViewData["line20"]</td>
+        </tr>
+        <tr>
+            <td>HATA 21</td>
+            <td>@ViewData["hatadeneme"]</td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+
+
+
+@*<form method="post" enctype="multipart/form-data" asp-controller="Parser" asp-action="Parser">
+        <select name="DocumentType" required>
+            <option value="">Seçiniz</option>
+            <option value="Word">Word</option>
+            <option value="Pdf">Pdf</option>
+        </select>
+        <br />
+        <br />
+        <br />
+        <input type="file" required name="File" value="" />
+        <br />
+        <br />
+        <br />
+        <input type="submit" name="name" value="Yükle" />
+    </form>*@
+
+
+
+
