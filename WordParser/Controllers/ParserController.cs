@@ -153,7 +153,7 @@ namespace WordParser.Controllers
                             if (RReplaceText.EndsWith('”'))
                             {
                                 StartCursor = false;
-                                if (CursorCounter>5)
+                                if (CursorCounter>50)
                                 {
                                     string Text = CursorText + " Cümlesindeki kelime 50 den fazladır  sayısı : " + CursorCounter;
                                     letter21.Add(Text);
