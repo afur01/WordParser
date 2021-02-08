@@ -19,7 +19,6 @@
             <select name="DocumentType" required class="btn btn-primary dropdown-toggle">
                 <option value="" class="dropdown-item">Seçiniz</option>
                 <option value="Word" class="dropdown-item">Word</option>
-                <option value="Pdf" class="dropdown-item">Pdf</option>
             </select>
         </div>
     </div>
@@ -64,6 +63,19 @@ table, th, td {
             <th>HATA</th>
             <th>SATIR</th>
         </tr>
+               @if (ViewBag.Cursor != null)
+        {
+
+            @foreach (var item in ViewBag.Cursor)
+            {
+                <tr>
+                    <td>Tırnak hatası</td>
+                    <td>@item</td>
+                    <td></td>
+                </tr>
+            }
+
+        }
         <tr>
             <td>HATA 1</td>
             <td>@ViewData["hata1"]</td>
@@ -167,6 +179,11 @@ table, th, td {
         <tr>
             <td>HATA 21</td>
             <td>@ViewData["hatadeneme"]</td>
+            <td></td>
+        </tr>
+         <tr>
+            <td>HATA 22</td>
+            <td>@ViewData["tsk"]</td>
             <td></td>
         </tr>
     </table>
