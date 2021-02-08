@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,7 +15,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Syncfusion.DocIO.DLS;
-//deneme
 
 namespace WordParser.Controllers
 {
@@ -97,8 +96,77 @@ namespace WordParser.Controllers
                     string letter18;
                     string letter19;
                     string letter20;
+                    string letter22;
+                    var letter21 = new List<string>();
+                    int CursorCounter = 0;
+                    int CursorItemCounter = 0;
+                    bool StartCursor = false;
+                    bool Start = false;
+                    int counter = 0;
+                    letter22 = " ";
                     foreach (var item in Words)                                                         //burada okuduğumuz değişkenin herbir satırını tek tek dolaşıyoruz
                     {
+                        if (Start)
+                        {
+                            
+                            string[] prefaceTextReplace = item.Split(" ");
+                            foreach (var CursorTextitem in prefaceTextReplace)
+                            {
+                                if (CursorTextitem.ToLower()=="teşekkürler")
+                                {
+                                    letter22 = "ÖNSÖZ'ün ilk paragrafı teşekkür ifadesi ile başlayamaz ";
+                                }
+                            }
+
+                                Start = false;
+                        }
+                        if (item == "ÖNSÖZ \r")
+                        {
+                            Start = true;   
+                        }
+
+                        counter = counter + 1;
+                        if (counter==32)
+                        {
+
+                        }
+                        ViewData["tsk"] = letter22;
+
+                        #region TırnakKontrolü
+                        string[] CursorTextReplace = item.Split(" ");
+                        string CursorText = "";
+                        foreach (var CursorTextitem in CursorTextReplace)
+                        {
+
+                            string RReplaceText = CursorTextitem.Replace("\r", string.Empty).Replace("\t", string.Empty);
+                            if (RReplaceText.StartsWith('“'))
+                            {
+                                StartCursor = true;
+                                CursorItemCounter = CursorItemCounter + 1;
+                                CursorCounter = 0;
+                            }
+                            if (StartCursor)
+                            {
+                                CursorText = CursorText+" "+ RReplaceText;
+                            }
+                            CursorCounter = CursorCounter + 1;
+                            if (RReplaceText.EndsWith('”'))
+                            {
+                                StartCursor = false;
+                                if (CursorCounter>5)
+                                {
+                                    string Text = CursorText + " Cümlesindeki kelime 50 den fazladır  sayısı : " + CursorCounter;
+                                    letter21.Add(Text);
+                                }
+                                CursorText = "";
+
+                            }
+                        }
+
+
+                        #endregion
+
+                        ViewBag.Cursor = letter21;
                         string Controitem = item.Replace("\r", string.Empty);
                         if (Controitem.Trim() == "GİRİŞ".Trim())                                        //koşul ile giriş bölümüne girip girmediğimizi kontrol ediyoruz
                         {
